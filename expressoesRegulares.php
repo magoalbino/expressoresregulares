@@ -38,6 +38,12 @@ $padrao = "/^[a-z0-9.\-\_]+@[a-z0-9.\-\_]+\.(com|br|com.br|net)$/i";
 $string = "13/09/2018";
 $padrao = "/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/";
 
+// Retira da string o seguinte texto: 999999.4.SIGTV_EXEMPLO nos casos em que o texto continua (ex: 999999.4.SIGTV_EXEMPLO.teste)
+$padrao = "/^[0-9]+\.[0-9]\.[(SIGTV)A-Z0-9\_]+/i";
+preg_match($padrao, $val, $matches);
+$val = $matches[0];
+
+echo $val;
 
 if(preg_match($padrao, $string)){
   echo "Válido";
