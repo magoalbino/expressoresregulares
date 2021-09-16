@@ -15,6 +15,7 @@
 //    -> ? 0 ou 1 ocorrência
 //    -> * 0 ou mais ocorrências
 //    -> + 1 ou mais ocorrências
+// Site para testar regex: https://regex101.com/r/tO4jX2/1
 
 //Dessa forma a validação é feita apenas uma vez (uma ocorrência, um caractere):
 $string = "a"; //válido
@@ -42,6 +43,10 @@ $padrao = "/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/";
 $padrao = "/^[0-9]+\.[0-9]\.[(SIGTV)A-Z0-9\_]+/i";
 preg_match($padrao, $val, $matches);
 $val = $matches[0];
+
+// feito em javascript
+// Retira o valor numérico dentro do atributo 'value' de uma tag (1 ou mais ocorrencias): text.match(/value\=\"([0-9]+)\"/);
+// caso os valores sejam texto, espaço e underline também (0 ou mais ocorrencias): inputt.match(/value\=\"([A-Za-z0-9 _]*)\"/);
 
 echo $val;
 
